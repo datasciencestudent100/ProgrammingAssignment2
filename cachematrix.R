@@ -47,3 +47,40 @@ cacheSolve <- function(x, ...) {
     }
     
 }
+
+########################### Test Case  ####################################
+# 
+# 
+# TestMatrix = matrix( c(2,4,3,1,5,7,7,4,2),3,3)
+# 
+# TestMatrix
+# 
+# # [,1] [,2] [,3]
+# # [1,]    2    1    7
+# # [2,]    4    5    4
+# # [3,]    3    7    2
+# 
+#     
+# TestObject<- makeCacheMatrix(TestMatrix)  # call constructor makeCacheMatrix() to instantiate a test Object
+# 
+# TestObject$get()    # get the matrix
+# TestObject$getinverse()   # get the inverse matrix which is null
+# 
+# 
+# cacheSolve(TestObject)  # call cacheSolve first for setting and getting inverse matrix
+# 
+# cacheSolve(TestObject)  # call again cacheSolve for getting inverse matrix from the cache
+# 
+# TestObject$get()  
+# 
+# ###################### Matrix * Inverse Matrix ##################
+# ResultMatrix <- TestObject$get()   %*% cacheSolve(TestObject)
+# 
+# ####  of using the following statement
+# ResultMatrix <- TestObject$get()   %*% TestObject$getinverse()
+# ####===========================================================
+# 
+# ResultMatrix <- round(ResultMatrix)
+# 
+# ResultMatrix
+# 
